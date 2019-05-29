@@ -16,26 +16,33 @@
 </head>
 
 <body>
-    <!-- Buttons -->
-    <div class="container-fluid">
-        <div id="buttons"></div>
-    </div>
+    <main>
+        <header class="mt-3">
+            <h1>Gotta Catch 'Em All!</h1>
+            <p>created by <a href="https://github.com/herrenchek" target="_blank">Giselle Herr</a></p>
+        </header>
 
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Gifs -->
-            <div class="col-8" id="gifs"></div>
-            <!-- Form -->
-            <form class="col-4">
-                <div class="form-group">
-                    <label for="input">Add an animal:</label>
-                    <input type="text" class="form-control" id="input" placeholder="Meow?" />
-                </div>
-                <input type="submit" class="btn btn-outline-primary" value="Submit" />
-            </form>
+        <!-- Buttons -->
+        <div class="container-fluid">
+            <div id="buttons"></div>
         </div>
-    </div>
 
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <!-- Gifs -->
+                <div class="col-8" id="gifs"></div>
+                <!-- Form -->
+                <form class="col-4">
+                    <div class="form-group">
+                        <label for="input">Add a Pokémon:</label>
+                        <input type="text" class="form-control" id="input" placeholder="Who's that Pokémon?" />
+                    </div>
+                    <input type="submit" class="btn btn-outline-primary" value="Submit" />
+                </form>
+            </div>
+        </div>
+    </main>
+    
     <!-- JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/app.js"></script>

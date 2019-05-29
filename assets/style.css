@@ -10,6 +10,10 @@
     font-style: normal;
 }
 
+body {
+    background-color: #34383b;
+}
+
 h1 {
     font-family: 'Pokemon Go', Arial, sans-serif;
     font-size: 50px;
@@ -27,7 +31,7 @@ p {
 }
 
 a {
-    -webkit-text-stroke: 0.3px;
+    -webkit-text-stroke: 0px;
 }
 
 button {
@@ -38,4 +42,8 @@ img {
     display: block;
     float: left;
     margin: 15px;
+}
+
+label {
+    color: #fff;
 }

@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GifTastic</title>
+    <title>GifTastic by Giselle</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="assets/style.css" />
 </head>
+
 <body>
-    <div id="buttons"></div>
+    <!-- Buttons -->
+    <div class="container-fluid">
+        <div id="buttons"></div>
+    </div>
 
-    <form>
-        <label for="input">Add an animal:</label>
-        <input type="text" id="input" />
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Gifs -->
+            <div class="col-8" id="gifs"></div>
+            <!-- Form -->
+            <form class="col-4">
+                <div class="form-group">
+                    <label for="input">Add an animal:</label>
+                    <input type="text" class="form-control" id="input" placeholder="Meow?" />
+                </div>
+                <input type="submit" class="btn btn-outline-primary" value="Submit" />
+            </form>
+        </div>
+    </div>
 
-        <input type="submit" value="Submit" />
-    </form>
-
-    <div id="gifs"></div>
-
-    
+    <!-- JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/app.js"></script>
 </body>
+
 </html>

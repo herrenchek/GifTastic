@@ -17,6 +17,7 @@ $(document).ready(function () {
 
     generate();
 
+    //Click handler for adding new buttons to page
     $("#submit").on("click", function (event) {
         event.preventDefault();
         //Grab the input from the textbox
@@ -38,8 +39,12 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
+            
+            var numGifs = response.data;
             //Retrieve gif URL and stores it in imageURL variable
-            var imageURL = response.data[0].images.fixed_height.url;
+            for (var i = 0; i < numGifs.length; i++) {
+            
+            var imageURL = response.data[i].images.fixed_height.url;
 
             // var rating = response.data[0].rating;
             // // Creates an element to have the rating displayed
@@ -54,7 +59,15 @@ $(document).ready(function () {
             image.attr("alt", pokemon + " image.");
             //Add it to the page
             $("#gifs").prepend(image);
+            }
+            
         });
+    });
+
+    //Click handler for clearing gifs div
+    $("#clear").on("click", function (event) {
+        event.preventDefault();
+        $("#gifs").empty();
     });
 
 });

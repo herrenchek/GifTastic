@@ -39,11 +39,14 @@ button {
 }
 
 img {
-    display: block;
-    float: left;
-    margin: 15px;
+    margin: 20px;
 }
 
 label {
     color: #fff;
+}
+
+.block {
+    display: block;
+    float: left;
 }

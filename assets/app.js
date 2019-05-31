@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //Array of Pokemon
+    //Default array of Pokemon
     var topics = ['pikachu', 'togepi', 'jigglypuff', 'entei', 'charizard', 'sylveon', 'clefairy', 'victini', 'meowth', 'ho-oh', 'lugia', 'celebi', 'mewtwo', 'darkrai'];
 
     //Generate buttons using items from topics array and append to buttons div
@@ -28,6 +28,12 @@ $(document).ready(function () {
         generate();
     });
 
+    //Click handler for clearing gifs div
+    $("#clear").on("click", function (event) {
+        event.preventDefault();
+        $("#gifs").empty();
+    });
+
     //Click handler for dynamically generated topics buttons
     $(document.body).on("click", ".btn-primary", function () {
         var pokemon = $(this).attr("data-name");
@@ -38,36 +44,31 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
-            
-            var numGifs = response.data;
-            //Retrieve gif URL and stores it in imageURL variable
-            for (var i = 0; i < numGifs.length; i++) {
-            
-            var imageURL = response.data[i].images.fixed_height.url;
+            //Array of 10 gifs
+            var giphys = response.data;
 
-            // var rating = response.data[0].rating;
-            // // Creates an element to have the rating displayed
-            // var p = $("<p>").text("Rating: " + rating);
-            // $("#gifs").prepend(p);
-
-            //Creating an image
+            for (var i = 0; i < giphys.length; i++) {
+            //Create an image
             var image = $("<img>");
-
-            //Setting src and alt attributes on the image
-            image.attr("src", imageURL);
+            //Set src and alt attributes on the image
+            image.attr("src", giphys[i].images.fixed_height.url);
             image.attr("alt", pokemon + " image.");
-            //Add it to the page
-            $("#gifs").prepend(image);
-            }
             
+            //Still image
+            //image.attr(giphys[i].images.fixed_height_still.url);
+
+            //Create an element to have the rating displayed
+            var p = $("<p>").text("Rating: " + (giphys[i].rating).toUpperCase());
+
+            //Add gif and rating to the page
+            var newGif = $('<div class="block">');
+            newGif.append(image);
+            newGif.append(p);
+            $("#gifs").prepend(newGif);
+            }  
         });
     });
 
-    //Click handler for clearing gifs div
-    $("#clear").on("click", function (event) {
-        event.preventDefault();
-        $("#gifs").empty();
-    });
+
 
 });

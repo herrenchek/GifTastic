@@ -48,27 +48,24 @@ $(document).ready(function () {
             var giphys = response.data;
 
             for (var i = 0; i < giphys.length; i++) {
-            //Create an image
-            var image = $("<img>");
-            //Set src and alt attributes on the image
-            image.attr("src", giphys[i].images.fixed_height.url);
-            image.attr("alt", pokemon + " image.");
-            
-            //Still image
-            //image.attr(giphys[i].images.fixed_height_still.url);
+                //Create an image
+                var image = $("<img>");
+                //Set src and alt attributes on the image
+                image.attr("src", giphys[i].images.fixed_height.url);
+                image.attr("alt", pokemon + " image.");
 
-            //Create an element to have the rating displayed
-            var p = $("<p>").text("Rating: " + (giphys[i].rating).toUpperCase());
+                //Still image
+                //image.attr(giphys[i].images.fixed_height_still.url);
 
-            //Add gif and rating to the page
-            var newGif = $('<div class="block">');
-            newGif.append(image);
-            newGif.append(p);
-            $("#gifs").prepend(newGif);
-            }  
+                //Create an element to have the rating displayed
+                var p = $("<p>").text("Rating: " + (giphys[i].rating).toUpperCase());
+
+                //Add gif and rating to the page
+                var newGif = $('<div class="block">');
+                newGif.append(image);
+                newGif.append(p);
+                $("#gifs").prepend(newGif);
+            }
         });
     });
-
-
-
 });
